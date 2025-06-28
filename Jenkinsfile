@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         SONARQUBE = 'SonarQubeServer' // Configure this in Jenkins > Manage Jenkins > Tools
-        GMAIL_USER = credentials('gmail-user')  // Add credentials in Jenkins
+        GMAIL_USER = credentials("230494@students.au.edu.pk")  // Add credentials in Jenkins
     }
 
     stages {
@@ -68,14 +68,14 @@ pipeline {
             emailext (
                 subject: "✅ Build Successful",
                 body: "Build passed for ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                to: "recipient@gmail.com"
+                to: "https://github.com/susheelk3/jenkins-pipline.git"
             )
         }
         failure {
             emailext (
                 subject: "❌ Build Failed",
                 body: "Build failed for ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                to: "recipient@gmail.com"
+                to: "https://github.com/susheelk3/jenkins-pipline.git"
             )
         }
     }
