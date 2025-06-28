@@ -10,7 +10,7 @@ pipeline {
 
         stage('Clone Code') {
             steps {
-                git 'https://github.com/yourusername/yourrepo.git'
+                git 'https://github.com/susheelk3/jenkins-pipline.git'
             }
         }
 
